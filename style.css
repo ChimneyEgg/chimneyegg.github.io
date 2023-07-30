@@ -1,0 +1,40 @@
+html {
+    font-family: 'Share Tech Mono', monospace;
+    background: url(https://grainy-gradients.vercel.app/noise.svg);
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+
+header, footer {
+    padding: 3%;
+
+    text-align: center;
+}
+
+header {
+    background: 
+    linear-gradient(to top, black, transparent), 
+    url(https://grainy-gradients.vercel.app/noise.svg);
+    filter: contrast(100%) brightness(100%);  
+}
+
+footer {
+    background: 
+    linear-gradient(to bottom, black, transparent), 
+    url(https://grainy-gradients.vercel.app/noise.svg);
+    filter: contrast(100%) brightness(100%);  
+}
+
+main {
+    border: solid;
+    background-color: black;
+}
+
+aside, section {
+    border: solid;
+    background-color: black;
+}
