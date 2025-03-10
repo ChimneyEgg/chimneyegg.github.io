@@ -1,0 +1,110 @@
+March 9th, 2025
+v1.0_02
+
+Changed mobs to disappear upon player death ( in order to prevent softlocks)
+Changed arrow recipe to give 8 arrows per craft
+Changed creeper detect range
+Changed difficulty settings
+
+
+
+March 6th, 2025
+v1.0
+
+Changed textures of almost everything
+
+Added cloth colors
+Added naturally spawning plants
+   * Arterial Plant
+   * Cloud Plant
+   * Corpse-Fire Plant
+   * Iris Stalk
+   * Moon Bloom
+   * Pink Bud
+   * Stone Stalk
+   * Lunar Shroom
+   * Poison Mushroom
+Added shale, slate, and shingle gravel
+Added anchor 
+Added peat, and mossy gravel
+Added rainbow bricks, and checkered bricks
+Added slab flooring, framed stone, wooden window, wooden support, textured slab, and compound brick
+Added cloud block
+Added salt block
+
+Added spires (w/ anchors)
+Added rings
+Added altars
+Added piles of gravel
+Added peat deposits
+Added marshy seaside
+Added dunes/salt flats
+Added snowy mountaintops
+Added clouds
+Added natural grasses (+flowers)
+Added something far far out, and then something farther, and another farther, and so on
+
+Added cards (passive effects)
+   * Vitality cards
+   * Mining cards
+   * Building cards
+   * Agility cards
+Added garland
+Added staves
+   * Jump Staff
+   * Ice Staff
+   * Quake Staff
+   * Cloud Staff
+   * Inferno Staff
+   * Iris Staff
+   * Base Staff
+   * Silk Touch Staves
+   * Bloom Staff
+Added durendal sword
+Added bog nugget
+Added daggers
+   * Wooden Dagger
+   * Stone Dagger
+   * Iron Dagger
+   * Diamond Dagger
+   * Golden Dagger
+Added ore bows
+   * Stone-Covered Bow
+   * Iron-Plated Bow
+   * Diamond-Encrusted Bow
+   * Gilded Bow
+Added shuriken
+
+Added terrorbirds
+Added husks
+Added ducks (yay)
+
+Added ability for cacti to grow pink buds
+
+Changed starting max health
+Changed mob spawn rate
+Changed creepers to be able to see through walls (run)
+Changed (most) enemies to be able to climb walls
+Changed sky/fog color
+Changed maximum darkness allowed
+Changed mob dungeon placement/chance
+Changed mob spawners to lock initially their chests, until the spawner is destroyed
+Changed zombies & skeletons to not burn during daytime
+Removed moon & stars at night
+
+Added displayed item names
+Added ability to edit signs
+Added ability for items to float/bounce in water
+Added special ampersand symbols to font
+Changed font color
+Changed main menu
+Changed torches to be inactive first upon placing (can be activated)
+Mobs will now snuff out torches
+
+Added one new song
+
+Added new F1, F2, and F3 functionality
+Added numpad cheats
+
+Added secrets
+Maybe removed Herobrine
