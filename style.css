@@ -30,6 +30,15 @@ nav {
     padding: 1%;
 }
 
+table, td {
+    border: solid;
+    background-color: black;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: -5%;  
+    text-align: center;    
+}
+
 footer {
     background: 
     linear-gradient(to bottom, black, transparent), 
