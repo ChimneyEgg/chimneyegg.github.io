@@ -731,8 +731,8 @@ They are subdivided into 4 suits, and 4 ranks</p>
 <p>In order to make your own hub you must follow these steps:</p>
 <ol>
 <li>Create a new world</li>
-<li>Cut and copy the original hub world, and place it somewhere safe</li>
-<li>Rename the world (the directory that contains the world data) you created to 'Hub'</li>
+<li>Cut and paste the original hub world directory, and place it somewhere safe</li>
+<li>Rename the world you created to 'Hub' (the directory that contains the world data) </li>
 </ol>
 <p>And now your game should automatically load into THAT world everytime you log on. In order to actually make it be able to teleport you to other worlds you will need to do the following:</p>
 <ol>
@@ -762,6 +762,9 @@ World5:x:-155:y:46:z:-241
 <li>Ensure that each is on its OWN seperate line, AND that there are no empty lines in between. You can add as many worlds (as well as worlds named something besides 'WorldX')</li>
 <li>Save the file, and next time you load into the hub, the settings should be applied</li>
 </ol>
+<p>The syntax 'World1:x:-160:y:46:z:-226' defines a teleporter/loader/i don't have a good terminology picked out yet, with the first string seperated by a colon representing the world name, and the next x, y, and z, obviously the coordinates WHERE the teleport is to occur. The best way to find the coordinates for a teleporter is by using the F3 info menu</p>
+<p>When editing your hub world, ensure that 'canSaveGame' is set to 'true'. While it is set to true, do NOT attempt to use the teleporters to the other worlds (because it will save the hubworld IN the exact space where the teleporter position would be, causing a softlock)</p>
+<p>Once you're done with the construction of your world, make sure to set 'canSaveGame' and 'canBreakBlocks' to false.</p>
 <h3 id="misc">Misc</h3>
 <ul>
 <li>Hoes can be right-clicked on fully grown wheat to harvest them, and automatically plant back the seed</li>
