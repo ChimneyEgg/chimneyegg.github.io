@@ -1,0 +1,205 @@
+v1.2
+Added hub world
+
+Added Processor 
+Added Aging Rack
+
+Added Empty Bottle
+Added Apple Extract
+Added Apple Cider
+Added Apple Vinegar
+Added Wheat Flour
+Added Sugar
+Added Wort
+Added Beer
+Added Salt Pile
+Added Dough
+Added Yeast
+Added Spiced Cidar
+Added Tea
+Added Bottle Of Milk
+Added Moist Cheese
+Added Soft Cheese
+Added Hard Cheese
+Added Dry Cheese 
+Added Butter
+Added Pastry Dough
+Added Pastry
+
+Added ability for hoes, upon right-clicking, to harvest fully grown wheat, leaving the seed in place
+Added In-Game Autosave option toggle (in order to fix immense lag during autosaves)
+Added FOV slider
+Added more splashes
+
+Fixed food being consumed upon interacting with chests/workbenches/etc, and also while at max HP
+Fixed autosaving causing massive lag spikes (see above)
+Fixed sign positioning during sign editing
+
+Changed Furnace GUI 
+Changed stack sizes of certain vanilla foods
+Changed HP recovery of multiple vanilla foods
+Changed colored cloth crafting recipes to now require the processor instead
+Changed options GUI
+Changed axes & pickaxes to have proper efficacy against correct block materials
+
+Nerfed card passive effects
+
+Renamed 'bamboo' to 'reed'
+Renamed several ore items/weapons/armors
+Resprited Apple
+Resprited Classic Grass/Wheat Block
+Resprited Wooden Window, Wooden Pillar
+
+Removed bread crafting recipe (-> moved to needing Wheat Flour) 
+Removed Milk Bucket (-> Replaced by Bottle Of Milk)
+Removed ability to passively heal in the peaceful difficulty
+
+April 6th, 2025
+v1.1
+Fixed durendal not being implemented properly
+Fixed spiders disappearing randomly
+Added ability to switch between "default" and "classic" textures using the F8 key
+Added ability for salt to burn certain enemies
+Added Quarryer enemy
+Added ability to view equipped cards outside of inventory
+Added Shroomspawn Staff
+Added Slow-Fall Boots
+Added Shock-Plate 
+Added Firecrackers
+Added Slushthrow
+Added chance for dungeons to spawn with multiple floors
+Changed wiki
+Changed HUD/GUI
+Changed the durendal stats
+Changed durability calculations
+Changed daggers to sometimes drop as an item upon colliding with a mob
+Changed texture of mob spawner
+Changed textures of cards
+Changed dungeons to drop their loot from the mob spawner (instead of spawning in chests)
+Nerfed Kings and Queens of Hearts rate of healing
+
+
+March 10th, 2025
+v1.0_03
+
+Changed hostile mob spawning rates to be based on a cycle of days
+    * 1st night: no mob spawns
+    * 2nd night: few mob spawns
+    * 3rd night: many mob spawns
+    * 4th night: a LOT of mob spawns
+    * 5.. night: reset to no mob spawns, and cycle
+Changed mob spawners to be impervious to explosions 
+Changed max health of enemies
+Fixed locked chests being able to be opened using an unlocked chest
+
+
+March 9th, 2025
+v1.0_02
+
+Changed mobs to disappear upon player death ( in order to prevent softlocks)
+Changed arrow recipe to give 8 arrows per craft
+Changed creeper detect range
+Changed difficulty settings
+
+
+
+March 6th, 2025
+v1.0
+
+Changed textures of almost everything
+
+Added cloth colors
+Added naturally spawning plants
+   * Arterial Plant
+   * Cloud Plant
+   * Corpse-Fire Plant
+   * Iris Stalk
+   * Moon Bloom
+   * Pink Bud
+   * Stone Stalk
+   * Lunar Shroom
+   * Poison Mushroom
+Added shale, slate, and shingle gravel
+Added anchor 
+Added peat, and mossy gravel
+Added rainbow bricks, and checkered bricks
+Added slab flooring, framed stone, wooden window, wooden support, textured slab, and compound brick
+Added cloud block
+Added salt block
+
+Added spires (w/ anchors)
+Added rings
+Added altars
+Added piles of gravel
+Added peat deposits
+Added marshy seaside
+Added dunes/salt flats
+Added snowy mountaintops
+Added clouds
+Added natural grasses (+flowers)
+Added something far far out, and then something farther, and another farther, and so on
+
+Added cards (passive effects)
+   * Vitality cards
+   * Mining cards
+   * Building cards
+   * Agility cards
+Added garland
+Added staves
+   * Jump Staff
+   * Ice Staff
+   * Quake Staff
+   * Cloud Staff
+   * Inferno Staff
+   * Iris Staff
+   * Base Staff
+   * Silk Touch Staves
+   * Bloom Staff
+Added durendal sword
+Added bog nugget
+Added daggers
+   * Wooden Dagger
+   * Stone Dagger
+   * Iron Dagger
+   * Diamond Dagger
+   * Golden Dagger
+Added ore bows
+   * Stone-Covered Bow
+   * Iron-Plated Bow
+   * Diamond-Encrusted Bow
+   * Gilded Bow
+Added shuriken
+
+Added terrorbirds
+Added husks
+Added ducks (yay)
+
+Added ability for cacti to grow pink buds
+
+Changed starting max health
+Changed mob spawn rate
+Changed creepers to be able to see through walls (run)
+Changed (most) enemies to be able to climb walls
+Changed sky/fog color
+Changed maximum darkness allowed
+Changed mob dungeon placement/chance
+Changed mob spawners to lock initially their chests, until the spawner is destroyed
+Changed zombies & skeletons to not burn during daytime
+Removed moon & stars at night
+
+Added displayed item names
+Added ability to edit signs
+Added ability for items to float/bounce in water
+Added special ampersand symbols to font
+Changed font color
+Changed main menu
+Changed torches to be inactive first upon placing (can be activated)
+Mobs will now snuff out torches
+
+Added one new song
+
+Added new F1, F2, and F3 functionality
+Added numpad cheats
+
+Added secrets
+Maybe removed Herobrine

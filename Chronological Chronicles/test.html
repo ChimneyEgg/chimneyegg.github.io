@@ -27,7 +27,8 @@
 <li><a href="#natural-blocks">Natural Blocks</a></li>
 <li><a href="#plants">Plants</a></li>
 <li><a href="#crafted-blocks">Crafted Blocks</a></li>
-<li><a href="#misc">Armor</a></li>
+<li><a href="#interactable-blocks">Interactable Blocks</a></li>
+<li><a href="#misc">Misc</a></li>
 </ul>
 </li>
 <li><a href="#world-generation">World Generation</a><ul>
@@ -49,6 +50,8 @@
 <li><a href="#gameplay">Gameplay</a><ul>
 <li><a href="#cards">Cards</a></li>
 <li><a href="#mob-sieges">Mob Sieges</a></li>
+<li><a href="#artisan">Artisanship</a></li>
+<li><a href="#hub">Hub</a></li>
 <li><a href="#misc">Misc</a></li>
 </ul>
 </li>
@@ -57,6 +60,7 @@
 <li><a href="#v1-0_02">Version 1.0_02</a></li>
 <li><a href="#v1-0_03">Version 1.0_03</a></li>
 <li><a href="#v1-1">Version 1.1</a></li>
+<li><a href="#v1-2">Version 1.2</a></li>
 </ul>
 </li>
 </ul>
@@ -592,6 +596,63 @@ The general recipe is as follows: where X is a type of <strong>flower</strong></
 </tr>
 </tbody>
 </table>
+<h3 id="interactable-blocks">Interactable Blocks</h3>
+<h4 id="processor">Processor</h4>
+<p>The processor is an interactable block that takes in one item to be processed in its leftmost slot, and an item in the middle slot that is to have the contents of the first extracted to, the resulting product of which appearing in the rightmost slot. See the <a href="#artisan">artisan section</a> under gameplay for more detailed info</p>
+<table>
+<thead>
+<tr>
+<th>Crafting</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+
+<td>Planks</td>
+<td>Lever</td>
+<td>Planks</td>
+</tr>
+<tr>
+
+<td>Log</td>
+<td>Stone Slab</td>
+<td>Log</td>
+</tr>
+<tr>
+
+<td>Log</td>
+<td> </td>
+<td>Log</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="age-rack">Age Rack</h4>
+<p>The age rack is an interactable block that has 10 slots. If an applicable item is placed inside of the age rack, after a while, it will transform into something new. See the <a href="#artisan">artisan section</a> under gameplay for more detailed info</p>
+<table>
+<thead>
+<tr>
+<th>Crafting</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Planks</td>
+<td>White Cloth</td>
+</tr>
+<tr>
+<td>Planks</td>
+<td>Planks</td>
+</tr>
+</tbody>
+</table>
+
 <h3 id="misc">Misc</h3>
 <h4 id="colored-cloth">Colored Cloth</h4>
 <p>The mod adds colored cloth, which can be crafted using a corresponding flower and cloth</p>
@@ -624,8 +685,86 @@ They are subdivided into 4 suits, and 4 ranks</p>
 </ul>
 <h3 id="mob-sieges">Mob Sieges</h3>
 <p>Occasionally mobs can decide to siege a base, so beware</p>
+<h3 id="artisan">Artisanship</h3>
+<p>Since <a href="#v1-2">1.2</a>, a new gameplay mechanic to process and create new items/blocks has been added: artisanship. The first necessary components are the: <a href="#processor">Processor</a> and the <a href="#age-rack">Age Rack</a>, from which all artisan items are crafted. Below is a complete list of how to produce any of the new goods</p>
+<ul>
+<li>[Processor] + (Apple) + (Empty Bottle) => Apple Extract</li>
+<li>[Aging Rack] + (Apple Extract) => Apple Cider</li>
+<li></li>
+<li>[Processor] + (Wheat) + (Bowl) => Wheat Flour</li>
+<li>[Processor] + (Reed) + (Bowl) => Sugar</li>
+<li></li>
+<li>[Crafting Table] + (Filled Bottle) + (Yeast) + (Wheat Flour) + (Sugar) => Wort</li>
+<li>[Aging Rack] + (Wort) => Beer</li>
+<li></li>
+<li>[Water] + (Empty Bottle) => Filled Bottle</li>
+<li></li>
+<li>[Processor] + (Salt Block) + (Bowl) => Salt Pile</li>
+<li></li>
+<li>[Crafting Table] + (Yeast) + (Wheat Flour) + (Egg) + (Salt Pile) => Dough</li>
+<li></li>
+<li>[Furnace] + (Dough) => Bread</li>
+<li></li>
+<li>[Furnace] + (Filled Bottle) + (Wheat Flour) => Yeast</li>
+<li></li>
+<li>[Processor] + (Poison Mushroom) + (Apple Cider) => Vinegar</li>
+<li>[Furnace] + (Any Mod Plant) + (Apple Cider) + (FUEL) => Spiced Cider</li>
+<li>[Furnace] + (Any Mod Plant) + (Filled Bottle) + (FUEL) => Tea</li>
+<li></li>
+<li>[Aging Rack] + (Bottle Of Milk) => Curd</li>
+<li>[Crafting Table] + (Bottle Of Milk) + (Vinegar) => Curd</li>
+<li></li>
+<li>[Aging Rack] + (Curd) => Moist Cheese</li>
+<li>[Furnace] + (Filled Bottle) + (Curd) + (FUEL) => Mozzarella</li>
+<li></li>
+<li>[Processor] + (Milk) + (Bowl) => Butter</li>
+<li></li>
+<li>[Crafting Table] + (Butter) + (Wheat FLour) + (Sugar) + (Salt) => Pastry Dough</li>
+<li>[Furnace] + (Filled Bottle) + (Pastry Dough) => Pastry</li>
+<li></li>
+<li>[Processor] + (Curd) + (Bowl) => Pressed Curd</li>
+<li>[Furnace] + (Pressed Curd) + (FUEL) => Dry Cheese</li>
+<li>[Aging Rack] + (Pressed Curd) => Hard Cheese</li>
+</ul>
+<h3 id="hub">Hub</h3>
+<p>The hub is a new world added during the <a href="#v1-2">1.2</a> update, which will force the game to load into a hub world, from which, other worlds can be travelled to. </p>
+<p>In order to make your own hub you must follow these steps:</p>
+<ol>
+<li>Create a new world</li>
+<li>Cut and copy the original hub world, and place it somewhere safe</li>
+<li>Rename the world (the directory that contains the world data) you created to 'Hub'</li>
+</ol>
+<p>And now your game should automatically load into THAT world everytime you log on. In order to actually make it be able to teleport you to other worlds you will need to do the following:</p>
+<ol>
+<li>Create a new .txt file in the directory of the minecraft world, named 'hub'</li>
+<li>Inside of the hub.txt file, paste the following as a template:</li>
+<p>
+canSaveGame:true
+</p>
+<p>
+canBreakBlocks:true
+</p>
+<p>
+World1:x:-160:y:46:z:-226
+</p>
+<p>
+World2:x:-172:y:46:z:-229
+</p>
+<p>
+World3:x:-181:y:46:z:-242
+</p>
+<p>
+World4:x:-145:y:46:z:-225
+</p>
+<p>
+World5:x:-155:y:46:z:-241
+</p>
+<li>Ensure that each is on its OWN seperate line, AND that there are no empty lines in between. You can add as many worlds (as well as worlds named something besides 'WorldX')</li>
+<li>Save the file, and next time you load into the hub, the settings should be applied</li>
+</ol>
 <h3 id="misc">Misc</h3>
 <ul>
+<li>Hoes can be right-clicked on fully grown wheat to harvest them, and automatically plant back the seed</li>
 <li>Signs can now be edited</li>
 <li>Torches will start snuffed out, but can be relit by simply pressing on them (mobs can also now snuff them out)</li>
 <li>Most mobs can see through walls and will make their way towards the player</li>
@@ -644,6 +783,62 @@ They are subdivided into 4 suits, and 4 ranks</p>
 </main>
 <main>
 <h2 id="versions">Versions</h2>
+<h4>June 11th, 2025</h4>
+<h3 id="v1-2">v1.2</h3>
+<p>Added hub world</p>
+<p></p>
+<p>Added Processor </p>
+<p>Added Aging Rack</p>
+<p></p>
+<p>Added Empty Bottle</p>
+<p>Added Apple Extract</p>
+<p>Added Apple Cider</p>
+<p>Added Apple Vinegar</p>
+<p>Added Wheat Flour</p>
+<p>Added Sugar</p>
+<p>Added Wort</p>
+<p>Added Beer</p>
+<p>Added Salt Pile</p>
+<p>Added Dough</p>
+<p>Added Yeast</p>
+<p>Added Spiced Cidar</p>
+<p>Added Tea</p>
+<p>Added Bottle Of Milk</p>
+<p>Added Moist Cheese</p>
+<p>Added Soft Cheese</p>
+<p>Added Hard Cheese</p>
+<p>Added Dry Cheese </p>
+<p>Added Butter</p>
+<p>Added Pastry Dough</p>
+<p>Added Pastry</p>
+<p></p>
+<p>Added ability for hoes, upon right-clicking, to harvest fully grown wheat, leaving the seed in place</p>
+<p>Added In-Game Autosave option toggle (in order to fix immense lag during autosaves)</p>
+<p>Added FOV slider</p>
+<p>Added more splashes</p>
+<p></p>
+<p>Fixed food being consumed upon interacting with chests/workbenches/etc, and also while at max HP</p>
+<p>Fixed autosaving causing massive lag spikes (see above)</p>
+<p>Fixed sign positioning during sign editing</p>
+<p></p>
+<p>Changed Furnace GUI </p>
+<p>Changed stack sizes of certain vanilla foods</p>
+<p>Changed HP recovery of multiple vanilla foods</p>
+<p>Changed colored cloth crafting recipes to now require the processor instead</p>
+<p>Changed options GUI</p>
+<p>Changed axes & pickaxes to have proper efficacy against correct block materials</p>
+<p></p>
+<p>Nerfed card passive effects</p>
+<p></p>
+<p>Renamed 'bamboo' to 'reed'</p>
+<p>Renamed several ore items/weapons/armors</p>
+<p>Resprited Apple</p>
+<p>Resprited Classic Grass/Wheat Block</p>
+<p>Resprited Wooden Window, Wooden Pillar</p>
+<p></p>
+<p>Removed bread crafting recipe (-> moved to needing Wheat Flour) </p>
+<p>Removed Milk Bucket (-> Replaced by Bottle Of Milk)</p>
+<p>Removed ability to passively heal in the peaceful difficulty</p>
 <h4>April 6th, 2025</h4>
 <h3 id="v1-1">v1.1</h3>
 <p>Fixed durendal not being implemented properly</p>
