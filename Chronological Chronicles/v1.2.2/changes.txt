@@ -2,7 +2,6 @@ v1.2.2
 Added copper ore (no use)
 Added tin ore (no use)
 Added separate button in options to change textures
-Added entity mobility changes across different block types
 Added desert world type
 
 Readded world select button
