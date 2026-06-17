@@ -3,7 +3,7 @@ package game
 import rl "vendor:raylib"
 import mt "core:math"
 // import "core:log"
-import fm "core:fmt"
+// import fm "core:fmt"
 import "core:c"
 
 run: bool
@@ -58,7 +58,7 @@ enemy : Character
 // player_mhistory : [10]State_Time 
 // enemy_mhistory : [10]State_Time 
 
-MAX_HEALTH :: 100
+MAX_HEALTH :: 200
 
 sol_texture : rl.Texture 
 background_texture : rl.Texture 
@@ -101,7 +101,7 @@ init :: proc() {
 	health_texture = rl.LoadTexture("assets/health_bar.png")
 	timer_texture = rl.LoadTexture("assets/timer.png")
 	sad_texture = rl.LoadTexture("assets/sad.png")
-	boom_texture = rl.LoadTexture("assets/boom.gif")	
+	boom_texture = rl.LoadTexture("assets/boom.png")	
 	splash_texture = rl.LoadTexture("assets/splash.png")
 	loading_texture = rl.LoadTexture("assets/loading.png")
 	ready_texture = rl.LoadTexture("assets/ready.png")
@@ -140,7 +140,11 @@ draw_character :: proc(gamepad: i32, character: Character) {
 	}  else if character.history[0].state == .SUPER_KICK {
 		rl.DrawTextureRec(sol_texture, {160, 408, -160 if !character.right else 160, 136}, character.pos, rl.WHITE)
 	} else if character.history[0].state == .FIREBALL {
-		rl.DrawTextureRec(sol_texture, {80 if character.history[0].time < -4 else 160, 272, -80 if !character.right else 80, 136}, character.pos, rl.WHITE)
+		i := u8(-character.history[0].time * 5)
+
+		rl.DrawTextureRec(sol_texture, {80 if character.history[0].time < -32 else 160, 272, -80 if !character.right else 80, 136}, character.pos, rl.WHITE)
+		rl.DrawTextureEx(boom_texture, {character.pos[0] + (f32(character.history[0].time + 48) * (1 if character.right else -1)) * 4, character.pos[1] + 32}, 0, 0.1, 
+			{255, 255, 255, i})
 	}
 }
 
@@ -275,6 +279,17 @@ update_character :: proc(gamepad: i32, character: ^Character) {
 		break
 		case .PUNCH:
 		character.aerial = false
+			if !character.right {
+				if character.history[1].state == .LEFT && character.history[2].state == .CROUCH_LEFT {
+					add_to_history({.FIREBALL, -48}, &character.history)
+					break
+				} 
+			} else {
+				if character.history[1].state == .RIGHT && character.history[2].state == .CROUCH_RIGHT {
+					add_to_history({.FIREBALL, -48}, &character.history)
+					break
+				} 
+			}		
 			if character.history[0].time >= 0 {
 				add_to_history({.IDLE, 0}, &character.history)
 			}
@@ -307,7 +322,11 @@ update_character :: proc(gamepad: i32, character: ^Character) {
 			}
 		break
 		case .FIREBALL:
+		character.aerial = true
 
+			if character.history[0].time >= 0 {
+				add_to_history({.IDLE, 0}, &character.history)
+			}		
 		break
 	}
 }
@@ -406,7 +425,7 @@ if booming {
 		player.history[0].time += 1
 		enemy.history[0].time += 1
 
-		if !player.aerial {
+		if !player.aerial && player.history[0].time > 0 {
 			if player.pos[0] > enemy.pos[0] {
 				player.right = false 
 			} else {
@@ -414,7 +433,7 @@ if booming {
 			}		
 		}
 
-		if enemy.aerial {
+		if !enemy.aerial && enemy.history[0].time > 0 {
 			if player.pos[0] > enemy.pos[0] {
 				enemy.right = true 
 			} else {
@@ -424,9 +443,10 @@ if booming {
 
 		if !rl.IsGamepadAvailable(1) {
 			if enemy.history[0].time == 8 && enemy.pos[1] == GROUND_LEVEL {
-				val := State(rl.GetRandomValue(0, 12))
+				val := State(rl.GetRandomValue(0, 13))
 				t : i32 = 0 if val != .PUNCH else -8
 				t = 0 if val != .KICK else -12
+				t = 0 if val != .FIREBALL else -48
 				add_to_history({val, t}, &enemy.history)
 			}
 		}
@@ -443,10 +463,22 @@ if booming {
 				enemy.pos[0] -= 6			
 			}
 		}
+
+		if player.history[0].state == .FIREBALL {
+			if rl.Vector2Distance(player.pos + {(f32(player.history[0].time + 48) * (1 if player.right else -1)) * 4, 32}, enemy.pos) < 64 {
+				enemy.health += 1				
+			}
+		}
+		if enemy.history[0].state == .FIREBALL {
+			if rl.Vector2Distance(enemy.pos + {(f32(enemy.history[0].time + 48) * (1 if enemy.right else -1)) * 4, 32}, player.pos) < 64 {
+				player.health += 1				
+			}
+		}
+
 		if rl.Vector2Distance(player.pos, enemy.pos) < 32 {
 			if player.history[0].state == .PUNCH {
 				if player.history[0].time == -3 {
-					enemy.health += 10 if rl.IsGamepadAvailable(1) else 1
+					enemy.health += 2
 					if enemy.right {
 						player.pos[0] += 16
 						enemy.pos[0] -= 16
@@ -459,7 +491,7 @@ if booming {
 			}
 			if enemy.history[0].state == .PUNCH {
 				if enemy.history[0].time == -3 {
-					player.health += 10
+					player.health += 2 if rl.IsGamepadAvailable(1) else 10
 					if enemy.right {
 						player.pos[0] += 8
 						enemy.pos[0] -= 8
@@ -470,12 +502,39 @@ if booming {
 					}
 				}
 			}
+
+
+
+			if player.history[0].state == .SUPER_KICK {
+				enemy.health += 2
+
+				if enemy.right {
+					player.pos[0] += 8
+					enemy.pos[0] -= 8
+
+				} else {
+					player.pos[0] -= 8
+					enemy.pos[0] += 8
+				}
+			}
+			if enemy.history[0].state == .SUPER_KICK {
+				player.health += 2 
+
+				if enemy.right {
+					player.pos[0] += 8
+					enemy.pos[0] -= 8
+
+				} else {
+					player.pos[0] -= 8
+					enemy.pos[0] += 8
+				}
+			}					
 		}
 
 		if rl.Vector2Distance(player.pos, enemy.pos) < 64 {
 			if player.history[0].state == .KICK {
 				if player.history[0].time == -6 {
-					enemy.health += 20 if rl.IsGamepadAvailable(1) else 1
+					enemy.health += 10
 
 					if enemy.right {
 						player.pos[0] += 8
@@ -489,7 +548,7 @@ if booming {
 			}
 			if enemy.history[0].state == .KICK {
 				if enemy.history[0].time == -6 {
-					player.health += 20
+					player.health += 10 if rl.IsGamepadAvailable(1) else 20
 
 					if enemy.right {
 						player.pos[0] += 8
@@ -501,31 +560,7 @@ if booming {
 					}
 				}
 			}
-
-			if player.history[0].state == .SUPER_KICK {
-				enemy.health += 2 if rl.IsGamepadAvailable(1) else 1
-
-				if enemy.right {
-					player.pos[0] += 8
-					enemy.pos[0] -= 8
-
-				} else {
-					player.pos[0] -= 8
-					enemy.pos[0] += 8
-				}
-			}
-			if enemy.history[0].state == .SUPER_KICK {
-				player.health += 2
-
-				if enemy.right {
-					player.pos[0] += 8
-					enemy.pos[0] -= 8
-
-				} else {
-					player.pos[0] -= 8
-					enemy.pos[0] += 8
-				}
-			}			
+			
 		}
 
 		player.pos[0] = clamp(player.pos[0], 0, GAME_WIDTH-80)
@@ -562,6 +597,12 @@ if booming {
 		rl.DrawRectangleGradientH(195, 25, 113 - enemy.health, 13, rl.GREEN, rl.RED)
 
 		rl.DrawTexture(timer_texture, 0, 0, rl.WHITE)
+
+		// DEBUG
+		//for i := 0; i < 10; i += 1 {
+		//	rl.DrawText(fm.ctprint(player.history[i].state, player.history[i].time), 0, i32(i * 12), 12, {0, 0, 0, 64})
+		//	rl.DrawText(fm.ctprint(enemy.history[i].state, enemy.history[i].time), GAME_WIDTH-100, i32(i * 12), 12, {0, 0, 0, 64})		
+		//}
 
 		if game_load_in_time < 120 {
 			rl.EndShaderMode()
