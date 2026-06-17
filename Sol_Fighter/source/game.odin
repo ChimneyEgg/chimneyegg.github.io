@@ -563,12 +563,6 @@ if booming {
 
 		rl.DrawTexture(timer_texture, 0, 0, rl.WHITE)
 
-		// DEBUG
-		for i := 0; i < 10; i += 1 {
-			rl.DrawText(fm.ctprint(player.history[i].state, player.history[i].time), 0, i32(i * 12), 12, {0, 0, 0, 64})
-			rl.DrawText(fm.ctprint(enemy.history[i].state, enemy.history[i].time), GAME_WIDTH-100, i32(i * 12), 12, {0, 0, 0, 64})		
-		}
-
 		if game_load_in_time < 120 {
 			rl.EndShaderMode()
 		}
