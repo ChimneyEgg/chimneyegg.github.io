@@ -27,7 +27,7 @@ var ENVIRONMENT_IS_SHELL = !ENVIRONMENT_IS_WEB && !ENVIRONMENT_IS_NODE && !ENVIR
 
 // --pre-jses are emitted after the Module integration code, so that they can
 // refer to Module (if they choose; they can also define Module)
-// include: C:\Users\malte\AppData\Local\Temp\tmpywys8e51.js
+// include: C:\Users\malte\AppData\Local\Temp\tmpyc26pxwp.js
 
   Module['expectedDataFileDownloads'] ??= 0;
   Module['expectedDataFileDownloads']++;
@@ -156,25 +156,25 @@ Module['FS_createPath']("/", "assets", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/assets/background.png", "start": 0, "end": 79691}, {"filename": "/assets/boom.gif", "start": 79691, "end": 654788}, {"filename": "/assets/boom.ogg", "start": 654788, "end": 661502}, {"filename": "/assets/health_bar.png", "start": 661502, "end": 673570}, {"filename": "/assets/round_cat.png", "start": 673570, "end": 673887}, {"filename": "/assets/sad.png", "start": 673887, "end": 681843}, {"filename": "/assets/sol_badguy.png", "start": 681843, "end": 793432}, {"filename": "/assets/splash.png", "start": 793432, "end": 866019}, {"filename": "/assets/timer.png", "start": 866019, "end": 872603}, {"filename": "/assets/tower_of_lakes.ogg", "start": 872603, "end": 1844623}], "remote_package_size": 1844623});
+    loadPackage({"files": [{"filename": "/assets/background.png", "start": 0, "end": 79691}, {"filename": "/assets/boom.gif", "start": 79691, "end": 654788}, {"filename": "/assets/boom.ogg", "start": 654788, "end": 661502}, {"filename": "/assets/health_bar.png", "start": 661502, "end": 673570}, {"filename": "/assets/round_cat.png", "start": 673570, "end": 673887}, {"filename": "/assets/sad.png", "start": 673887, "end": 681843}, {"filename": "/assets/sol_badguy.png", "start": 681843, "end": 793432}, {"filename": "/assets/splash.png", "start": 793432, "end": 828379}, {"filename": "/assets/timer.png", "start": 828379, "end": 834963}, {"filename": "/assets/tower_of_lakes.ogg", "start": 834963, "end": 1806983}], "remote_package_size": 1806983});
 
   })();
 
-// end include: C:\Users\malte\AppData\Local\Temp\tmpywys8e51.js
-// include: C:\Users\malte\AppData\Local\Temp\tmporqbqzfl.js
+// end include: C:\Users\malte\AppData\Local\Temp\tmpyc26pxwp.js
+// include: C:\Users\malte\AppData\Local\Temp\tmp6sjowpf1.js
 
     // All the pre-js content up to here must remain later on, we need to run
     // it.
     if ((typeof ENVIRONMENT_IS_WASM_WORKER != 'undefined' && ENVIRONMENT_IS_WASM_WORKER) || (typeof ENVIRONMENT_IS_PTHREAD != 'undefined' && ENVIRONMENT_IS_PTHREAD) || (typeof ENVIRONMENT_IS_AUDIO_WORKLET != 'undefined' && ENVIRONMENT_IS_AUDIO_WORKLET)) Module['preRun'] = [];
     var necessaryPreJSTasks = Module['preRun'].slice();
-  // end include: C:\Users\malte\AppData\Local\Temp\tmporqbqzfl.js
-// include: C:\Users\malte\AppData\Local\Temp\tmpdnjwgekl.js
+  // end include: C:\Users\malte\AppData\Local\Temp\tmp6sjowpf1.js
+// include: C:\Users\malte\AppData\Local\Temp\tmpd_m86nnh.js
 
     if (!Module['preRun']) throw 'Module.preRun should exist because file support used it; did a pre-js delete it?';
     necessaryPreJSTasks.forEach((task) => {
       if (Module['preRun'].indexOf(task) < 0) throw 'All preRun tasks that exist before user pre-js code should remain after; did you replace Module or modify Module.preRun?';
     });
-  // end include: C:\Users\malte\AppData\Local\Temp\tmpdnjwgekl.js
+  // end include: C:\Users\malte\AppData\Local\Temp\tmpd_m86nnh.js
 
 
 var arguments_ = [];

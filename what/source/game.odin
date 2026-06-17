@@ -94,6 +94,8 @@ init :: proc() {
 	render_target = rl.LoadRenderTexture(GAME_WIDTH, GAME_HEIGHT)
 
 	camera.zoom = 1
+	camera.target = {HALF_GAME_WIDTH, HALF_GAME_HEIGHT}
+	camera.offset = {HALF_GAME_WIDTH, HALF_GAME_HEIGHT}
 
 	rl.PlaySound(bg_music)
 }
@@ -364,7 +366,7 @@ update :: proc() {
 
 		rl.BeginMode2D(camera)
 
-		rl.DrawTexture(background_texture, 0, 0, rl.WHITE)
+		rl.DrawTexture(background_texture, -24, 0, rl.WHITE)
 
 		// TODO: put this in a function. Wait this is a shitpost, why would I put that much effort into this
 		if player_mhistory[0].state == .IDLE {
